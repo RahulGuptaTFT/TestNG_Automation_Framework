@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="project.Utils.Listeners"></listener>
+    </listeners>
+    <parameter name="url" value="https://www.amazon.in"></parameter>
+    <parameter name="browser" value="chrome"></parameter>
+    <test verbose="2" preserve-order="true" name="C:/Users/Rahul Gupta/IdeaProjects/Test_Automation_Framework/src">
+        <classes>
+            <class name="Tests.allTests">
+                <methods>
+<!--                    <include name="logotest"/>-->
+                    <include name="loginTest"/>
+<!--                    <include name="SearchBarText_Test"/>-->
+<!--                    <include name="addTocart_Test"/>-->
+<!--                    <include name="getCartCount"/>-->
+<!--                    <include name="delete_From_cart_Midnight"/>-->
+<!--                    <include name="delete_From_cart_Green"/>-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
