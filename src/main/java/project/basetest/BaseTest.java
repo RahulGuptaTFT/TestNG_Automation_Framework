@@ -6,13 +6,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
+import project.Utils.Listeners;
 
 import java.time.Duration;
 
 
 public class BaseTest {
-    public static WebDriver driver;
-
+    protected WebDriver driver;
     protected static ExtentReports extent = new ExtentReports();
     protected static ExtentSparkReporter spark = new ExtentSparkReporter("C:/Users/Rahul Gupta/IdeaProjects/Test_Automation_Framework/reports/Extentreport.html");
 

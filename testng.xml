@@ -1,22 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <listeners>
-        <listener class-name="project.Utils.Listeners"></listener>
-    </listeners>
-    <parameter name="url" value="https://www.amazon.in"></parameter>
+<suite name="All Test Suite" parallel="classes">
+
     <parameter name="browser" value="chrome"></parameter>
-    <test verbose="2" preserve-order="true" name="C:/Users/Rahul Gupta/IdeaProjects/Test_Automation_Framework/src">
+    <parameter name="url" value="https://www.amazon.in"></parameter>
+
+
+    <test verbose="2" preserve-order="true" name="C:/Users/Rahul Gupta/IdeaProjects/Test_Automation_Framework">
         <classes>
-            <class name="Tests.allTests">
+            <class name="Tests.addToCart_Test">
                 <methods>
-<!--                    <include name="logotest"/>-->
+                    <include name="addTocart_Test"/>
+                </methods>
+            </class>
+            <class name="Tests.cartCountUpdate_Test">
+                <methods>
+                    <include name="getCartCount"/>
+                </methods>
+            </class>
+            <class name="Tests.deleteFromCart_Test">
+                <methods>
+                    <include name="delete_From_cart_Midnight"/>
+                </methods>
+            </class>
+            <class name="Tests.loginTest">
+                <methods>
                     <include name="loginTest"/>
-<!--                    <include name="SearchBarText_Test"/>-->
-<!--                    <include name="addTocart_Test"/>-->
-<!--                    <include name="getCartCount"/>-->
-<!--                    <include name="delete_From_cart_Midnight"/>-->
-<!--                    <include name="delete_From_cart_Green"/>-->
+                </methods>
+            </class>
+            <class name="Tests.logoTest">
+                <methods>
+                    <include name="logotest"/>
+                </methods>
+            </class>
+            <class name="Tests.searchBarUpdate_Test">
+                <methods>
+                    <include name="SearchBarText_Test"/>
                 </methods>
             </class>
         </classes>

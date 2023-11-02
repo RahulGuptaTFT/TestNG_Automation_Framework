@@ -7,8 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Homepage {
     WebDriver driver;
+    @FindBy(xpath = "//div[@id='nav-logo']/a[1]")
+    WebElement logo;
     @FindBy(xpath = "//a[@id='nav-link-accountList']")
     WebElement signIn_1;
+
 
     public Homepage(WebDriver driver) {
         this.driver = driver;
@@ -21,6 +24,9 @@ public class Homepage {
 //        Actions act = new Actions(driver);
 //        act.moveToElement(driver.findElement(signIn_1)).moveToElement(driver.findElement(signIn_2)).click().build().perform();
         signIn_1.click();
+    }
+    public String getLogoText() {
+        return logo.getText();
     }
 
 }

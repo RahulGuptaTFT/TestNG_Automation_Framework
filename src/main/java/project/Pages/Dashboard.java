@@ -7,8 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Dashboard {
     WebDriver driver;
-    @FindBy(xpath = "//div[@id='nav-logo']/a[1]")
-    WebElement logo;
+
     @FindBy(id = "twotabsearchtextbox")
     WebElement searchBar;
     @FindBy(id = "nav-search-submit-button")
@@ -27,9 +26,7 @@ public class Dashboard {
         PageFactory.initElements(driver, this);
     }
 
-    public String getLogoText() {
-        return logo.getText();
-    }
+
 
     public void searchText(String s) {
         searchBar.sendKeys(s);
