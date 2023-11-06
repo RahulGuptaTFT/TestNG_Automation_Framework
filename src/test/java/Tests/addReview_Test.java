@@ -2,6 +2,7 @@ package Tests;
 
 import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.JavascriptExecutor;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import project.Pages.Dashboard;
 import project.Pages.Homepage;
@@ -12,7 +13,7 @@ import project.basetest.BaseTest;
 
 import java.util.ArrayList;
 import java.util.Set;
-
+@Listeners(project.Utils.Listeners.class)
 public class addReview_Test extends BaseTest {
     propertiesFile prop = new propertiesFile();
     String id = prop.getId();

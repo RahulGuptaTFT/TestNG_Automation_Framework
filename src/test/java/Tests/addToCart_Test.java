@@ -2,6 +2,7 @@ package Tests;
 
 import com.aventstack.extentreports.ExtentTest;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import project.Pages.Cart;
 import project.Pages.Dashboard;
@@ -11,7 +12,7 @@ import project.Utils.propertiesFile;
 import project.basetest.BaseTest;
 import java.util.ArrayList;
 import java.util.Set;
-
+@Listeners(project.Utils.Listeners.class)
 public class addToCart_Test extends BaseTest {
     propertiesFile prop = new propertiesFile();
     String id = prop.getId();

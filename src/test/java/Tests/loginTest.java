@@ -1,12 +1,13 @@
 package Tests;
 
 import com.aventstack.extentreports.ExtentTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import project.Pages.Homepage;
 import project.Pages.LoginPage;
 import project.Utils.propertiesFile;
 import project.basetest.BaseTest;
-
+@Listeners(project.Utils.Listeners.class)
 public class loginTest extends BaseTest {
 
     propertiesFile prop = new propertiesFile();

@@ -2,6 +2,7 @@ package Tests;
 
 import com.aventstack.extentreports.ExtentTest;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import project.Pages.Cart;
 import project.Pages.Dashboard;
@@ -9,7 +10,7 @@ import project.Pages.Homepage;
 import project.Pages.LoginPage;
 import project.Utils.propertiesFile;
 import project.basetest.BaseTest;
-
+@Listeners(project.Utils.Listeners.class)
 public class cartCountUpdate_Test extends BaseTest {
     propertiesFile prop = new propertiesFile();
     String id = prop.getId();

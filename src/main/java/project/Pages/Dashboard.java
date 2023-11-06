@@ -13,7 +13,7 @@ public class Dashboard {
     WebElement searchBar;
     @FindBy(id = "nav-search-submit-button")
     WebElement Enter_to_Search;
-    @FindBy(xpath = "//span[text()='OnePlus Bullets Z2 Bluetooth Wireless in Ear Earphones with Mic, Bombastic Bass - 12.4 Mm Drivers, 10 Mins Charge - 20 Hrs Music, 30 Hrs Battery Life (Beam Blue)']")
+    @FindBy(xpath = "//body/div[@id='a-page']/div[@id='search']/div[1]/div[1]/div[1]/span[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/h2[1]/a[1]/span[1]")
     WebElement oneplusNeckband;
     @FindBy(xpath = "//body/div[@id='a-page']/div[@id='search']/div[1]/div[1]/div[1]/span[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/h2[1]/a[1]/span[1]")
     WebElement fastTrackWatch;
@@ -21,7 +21,7 @@ public class Dashboard {
     WebElement NikeShoes;
     @FindBy(xpath = "//span[text()='Apple iPhone 13 (128GB) - Green']")
     WebElement iphone;
-    @FindBy(xpath = "//div[@id='compare']")
+    @FindBy(xpath = "//div[@id='HLCXComparisonWidget_feature_div']")
     WebElement compare;
     @FindBy(xpath = "//input[@id='low-price']")
     WebElement minPrice;
