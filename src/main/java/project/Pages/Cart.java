@@ -20,8 +20,8 @@ public class Cart {
     @FindBy(xpath = "//form[@id='activeCartViewForm']/div[2]/div[3]/div[4]//div[1]/div[3]/div[1]/span[2]/span[1]/input[1]")
     WebElement delete_13_Midnight;
 
-//    @FindBy(xpath = "//form[@id='activeCartViewForm']/div[2]/div[4]/div[4]//div[1]/div[3]/div[1]/span[2]/span[1]/input[1]")
-//    WebElement delete_13_Green;
+    @FindBy(xpath = "//input[@id='add-to-wishlist-button-submit']")
+    WebElement addToWishlist;
 
 
     public void addToCart() {
@@ -32,9 +32,8 @@ public class Cart {
         return cart.getText();
     }
 
-    public void delete_13_Midnight(){
-        cart.click();
-        delete_13_Midnight.click();
+    public void addToWishlist(){
+        addToWishlist.click();
     }
 //    public void delete_13_Green(){
 //        cart.click();

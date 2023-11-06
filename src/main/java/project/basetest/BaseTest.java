@@ -10,7 +10,7 @@ import java.time.Duration;
 
 
 public class BaseTest {
-    protected WebDriver driver;
+    public WebDriver driver;
     protected static ExtentReports extent = new ExtentReports();
     protected static ExtentSparkReporter spark = new ExtentSparkReporter("C:/Users/Rahul Gupta/IdeaProjects/Test_Automation_Framework/reports/Extentreport.html");
 

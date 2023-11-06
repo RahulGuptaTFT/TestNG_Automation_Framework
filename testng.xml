@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite" parallel="classes">
+<suite name="All Test Suite" parallel="classes" thread-count="3">
 
-    <listeners>
-        <listener class-name="project.Utils.Listeners"></listener>
-    </listeners>
+    <!--    <listeners>-->
+    <!--        <listener class-name="project.Utils.Listeners"></listener>-->
+    <!--    </listeners>-->
 
     <parameter name="browser" value="chrome"></parameter>
     <parameter name="url" value="https://www.amazon.in"></parameter>
@@ -12,9 +12,24 @@
 
     <test verbose="2" preserve-order="true" name="C:/Users/Rahul Gupta/IdeaProjects/Test_Automation_Framework">
         <classes>
+            <class name="Tests.loginTest">
+                <methods>
+                    <include name="loginTest"/>
+                </methods>
+            </class>
             <class name="Tests.addToCart_Test">
                 <methods>
                     <include name="addTocart_Test"/>
+                </methods>
+            </class>
+            <class name="Tests.addReview_Test">
+                <methods>
+                    <include name="addReview"/>
+                </methods>
+            </class>
+            <class name="Tests.addToWishlist_Test">
+                <methods>
+                    <include name="addToWishList"/>
                 </methods>
             </class>
             <class name="Tests.cartCountUpdate_Test">
@@ -22,24 +37,21 @@
                     <include name="getCartCount"/>
                 </methods>
             </class>
-            <class name="Tests.deleteFromCart_Test">
+
+            <class name="Tests.removeItemFromWishlist">
                 <methods>
-                    <include name="delete_From_cart_Midnight"/>
+                    <include name="removefromWishlist"/>
                 </methods>
             </class>
-            <class name="Tests.loginTest">
+
+            <class name="Tests.Filters_Test">
                 <methods>
-                    <include name="loginTest"/>
+                    <include name="filter"/>
                 </methods>
             </class>
-            <class name="Tests.logoTest">
+            <class name="Tests.compareProduct_Test">
                 <methods>
-                    <include name="logotest"/>
-                </methods>
-            </class>
-            <class name="Tests.searchBarUpdate_Test">
-                <methods>
-                    <include name="SearchBarText_Test"/>
+                    <include name="compare"/>
                 </methods>
             </class>
         </classes>

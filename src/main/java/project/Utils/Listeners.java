@@ -32,8 +32,4 @@ public class Listeners implements ITestListener{
 //            throw new RuntimeException(e);
 //        }
     }
-    @Override
-    public void onTestSkipped(ITestResult result) {
-        System.out.println("test case Skipped and TestCase name is = "+result.getName());
-    }
 }

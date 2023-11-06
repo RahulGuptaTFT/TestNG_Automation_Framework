@@ -1,6 +1,7 @@
 package Tests;
 
 import com.aventstack.extentreports.ExtentTest;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import project.Pages.Cart;
 import project.Pages.Dashboard;
@@ -14,7 +15,7 @@ public class cartCountUpdate_Test extends BaseTest {
     String id = prop.getId();
     String pass = prop.getPass();
 
-    @Test(priority = 5)
+    @Test(groups = "Cart")
     public void getCartCount() {
         ExtentTest test = extent.createTest("Checking if Cart is showing right quantity");
         test.pass("verified");
@@ -30,9 +31,9 @@ public class cartCountUpdate_Test extends BaseTest {
 
         Dashboard dashboard = new Dashboard(driver);
         Cart cart = new Cart(driver);
-        String count = cart.getCartCount();
+        int count = Integer.parseInt(cart.getCartCount());
         System.out.println(count);
-        //Assert.assertEquals(count,"2");
+        Assert.assertEquals(count > 0,true);
 
     }
 }
