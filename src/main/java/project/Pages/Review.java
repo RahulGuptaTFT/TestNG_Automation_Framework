@@ -27,7 +27,6 @@ public class Review {
     public void addReview(String Headline , String TextArea){
         review.click();
         star_5.click();
-        fitAsExpected.click();
         headline.sendKeys(Headline);
         textarea.sendKeys(TextArea);
         submit.click();

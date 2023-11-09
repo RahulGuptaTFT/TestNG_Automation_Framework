@@ -35,14 +35,14 @@ public class compareProduct_Test extends BaseTest {
         Dashboard dashboard = new Dashboard(driver);
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("window.scrollBy(0,2000)");
-        dashboard.searchText("oneplus neckband z2");
-        dashboard.clickOnePlusNeckband();
+        dashboard.searchText("airpod pro 2nd generation");
+        dashboard.clickAirpod();
         Set<String> all = driver.getWindowHandles();
         ArrayList<String> tabs = new ArrayList<>(all);
         driver.switchTo().window(tabs.get(1));
 
         js.executeScript("window.scrollBy(0,5500)");
-        //Thread.sleep(5000);
+
         Assert.assertTrue(dashboard.checkCompareIsDisplayed());
     }
 }

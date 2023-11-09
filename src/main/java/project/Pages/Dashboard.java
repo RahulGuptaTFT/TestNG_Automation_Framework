@@ -13,12 +13,10 @@ public class Dashboard {
     WebElement searchBar;
     @FindBy(id = "nav-search-submit-button")
     WebElement Enter_to_Search;
-    @FindBy(xpath = "//body/div[@id='a-page']/div[@id='search']/div[1]/div[1]/div[1]/span[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/h2[1]/a[1]/span[1]")
-    WebElement oneplusNeckband;
-    @FindBy(xpath = "//body/div[@id='a-page']/div[@id='search']/div[1]/div[1]/div[1]/span[1]/div[1]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/h2[1]/a[1]/span[1]")
-    WebElement fastTrackWatch;
-    @FindBy(xpath = "//span[contains(text(),'Mens Court Vision Mid Nn Sneaker')]")
-    WebElement NikeShoes;
+    @FindBy(xpath = "//span[contains(text(),'AS-IT-IS ATOM Whey Protein 1kg with Digestive Enzymes')]")
+    WebElement asitis;
+    @FindBy(xpath = "//span[contains(text(),'Apple AirPods Pro')]")
+    WebElement airpod;
     @FindBy(xpath = "//span[text()='Apple iPhone 13 (128GB) - Green']")
     WebElement iphone;
     @FindBy(xpath = "//div[@id='HLCXComparisonWidget_feature_div']")
@@ -49,16 +47,11 @@ public class Dashboard {
         return searchBar.getAttribute("value");
     }
 
-    public void clickOnePlusNeckband() {
-        oneplusNeckband.click();
+    public void clickAsitis() {
+        asitis.click();
     }
-
-    public void clickFastTrackWatch() {
-        fastTrackWatch.click();
-    }
-
-    public void clickNikeShoes() {
-        NikeShoes.click();
+    public void clickAirpod() {
+        airpod.click();
     }
 
     public void clickIphone13(){

@@ -33,10 +33,10 @@ public class addToCart_Test extends BaseTest {
 
         Dashboard dashboard = new Dashboard(driver);
         dashboard.searchText(searchObject);
-        if (searchObject.equalsIgnoreCase("oneplus neckband z2")) {
-            dashboard.clickOnePlusNeckband();
+        if (searchObject.equalsIgnoreCase("asitis whey protein")) {
+            dashboard.clickAsitis();
         }else {
-            dashboard.clickFastTrackWatch();
+            dashboard.clickAirpod();
         }
         Set<String> all = driver.getWindowHandles();
         ArrayList<String> tabs = new ArrayList<>(all);
@@ -54,8 +54,8 @@ public class addToCart_Test extends BaseTest {
     @DataProvider(name = "searchItems")
     public Object[] items() {
         Object[] data = new Object[2];
-        data[0] = "oneplus neckband z2";
-        data[1] = "fasttrack watch";
+        data[0] = "asitis whey protein";
+        data[1] = "airpod pro 2nd generation";
         return data;
     }
 }

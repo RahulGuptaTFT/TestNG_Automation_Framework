@@ -35,8 +35,8 @@ public class addToWishlist_Test extends BaseTest {
 
         Dashboard dashboard = new Dashboard(driver);
         //oneplus neckband
-        dashboard.searchText("nike sneakers");
-        dashboard.clickNikeShoes();
+        dashboard.searchText("airpod pro 2nd generation");
+        dashboard.clickAirpod();
         Set<String> all = driver.getWindowHandles();
         ArrayList<String> tabs = new ArrayList<>(all);
         driver.switchTo().window(tabs.get(1));

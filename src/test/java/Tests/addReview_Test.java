@@ -34,8 +34,8 @@ public class addReview_Test extends BaseTest {
         loginPage.clickSubmit();
 
         Dashboard dashboard = new Dashboard(driver);
-        dashboard.searchText("nike sneakers");
-        dashboard.clickNikeShoes();
+        dashboard.searchText("airpod pro 2nd generation");
+        dashboard.clickAirpod();
         Set<String> all = driver.getWindowHandles();
         ArrayList<String> tabs = new ArrayList<>(all);
         driver.switchTo().window(tabs.get(1));
