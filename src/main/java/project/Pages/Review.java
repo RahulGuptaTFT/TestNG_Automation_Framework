@@ -1,5 +1,6 @@
 package project.Pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,6 +25,7 @@ public class Review {
     @FindBy(xpath = "//button[contains(text(),'Submit')]")
     WebElement submit;
 
+    @Step("Adding review step")
     public void addReview(String Headline , String TextArea){
         review.click();
         star_5.click();

@@ -1,5 +1,6 @@
 package project.Pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,6 +21,7 @@ public class Homepage {
 //    @FindBy(xpath = "//div[@id='nav-flyout-ya-signin']/a[1]/span[text()='Sign in']")
 //    static By signIn_2;
 
+    @Step("clicking on signIn button step")
     public void clickSignIn() {
 //        Actions act = new Actions(driver);
 //        act.moveToElement(driver.findElement(signIn_1)).moveToElement(driver.findElement(signIn_2)).click().build().perform();

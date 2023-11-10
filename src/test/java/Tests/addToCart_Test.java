@@ -1,13 +1,14 @@
 package Tests;
 
 import com.aventstack.extentreports.ExtentTest;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import project.Pages.Cart;
-import project.Pages.Dashboard;
-import project.Pages.Homepage;
-import project.Pages.LoginPage;
+import project.Pages.*;
 import project.Utils.propertiesFile;
 import project.basetest.BaseTest;
 import java.util.ArrayList;
@@ -18,10 +19,18 @@ public class addToCart_Test extends BaseTest {
     String id = prop.getId();
     String pass = prop.getPass();
 
-    @Test(dataProvider = "searchItems",groups = "Cart")
+
+    @Test(dataProvider = "searchItems",description = "Verifying add-to-cart Test")
+    @Description("Verifying add-to-cart Test")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("Story: Adding product in cart on amazon")
     public void addTocart_Test(String searchObject) throws InterruptedException {
         ExtentTest test = extent.createTest("Checking Add-to-cart Feature");
         test.info("If the cart total cost goes upto 1 Lakh Rupees, It will not add further");
+        LandingPage landingPage = new LandingPage(driver);
+        if (landingPage.checkYourAccountIsDisplayed() == true){
+            landingPage.clickYourAccount();
+        }
         Homepage homepage = new Homepage(driver);
         homepage.clickSignIn();
 
@@ -43,12 +52,11 @@ public class addToCart_Test extends BaseTest {
         driver.switchTo().window(tabs.get(1));
         Cart cart = new Cart(driver);
         cart.addToCart();
-        Thread.sleep(2000);
+
         driver.close();
         driver.switchTo().window(tabs.get(0));
-        Thread.sleep(2000);
-        dashboard.clearTextFromSearchBar();
 
+        dashboard.clearTextFromSearchBar();
     }
 
     @DataProvider(name = "searchItems")

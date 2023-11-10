@@ -1,12 +1,13 @@
 package Tests;
 
 import com.aventstack.extentreports.ExtentTest;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import project.Pages.Cart;
-import project.Pages.Dashboard;
-import project.Pages.Homepage;
-import project.Pages.LoginPage;
+import project.Pages.*;
 import project.Utils.propertiesFile;
 import project.basetest.BaseTest;
 
@@ -18,10 +19,17 @@ public class addToWishlist_Test extends BaseTest {
     String id = prop.getId();
     String pass = prop.getPass();
 
-    @Test(groups = "Wishlist")
+    @Test(description = "Verifying add to wishlist Test")
+    @Description("Verifying add to wishlist Test")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("Story: Adding product in wishlist on amazon")
     public void addToWishList() throws InterruptedException {
         ExtentTest test = extent.createTest("Checking Add-to-wishlist Feature");
         test.pass("verified");
+        LandingPage landingPage = new LandingPage(driver);
+        if (landingPage.checkYourAccountIsDisplayed() == true){
+            landingPage.clickYourAccount();
+        }
         Homepage homepage = new Homepage(driver);
         homepage.clickSignIn();
 
@@ -40,12 +48,12 @@ public class addToWishlist_Test extends BaseTest {
         Set<String> all = driver.getWindowHandles();
         ArrayList<String> tabs = new ArrayList<>(all);
         driver.switchTo().window(tabs.get(1));
-        Cart cart = new Cart(driver);
-        cart.addToWishlist();
-        Thread.sleep(2000);
+        Wishlist wishlist = new Wishlist(driver);
+        wishlist.addToWishlist();
+
         driver.close();
         driver.switchTo().window(tabs.get(0));
-        Thread.sleep(2000);
+
         dashboard.clearTextFromSearchBar();
     }
 }

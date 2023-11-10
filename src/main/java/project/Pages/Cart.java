@@ -1,5 +1,6 @@
 package project.Pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,26 +18,15 @@ public class Cart {
     @FindBy(id = "nav-cart-count")
     WebElement cart;
 
-    @FindBy(xpath = "//form[@id='activeCartViewForm']/div[2]/div[3]/div[4]//div[1]/div[3]/div[1]/span[2]/span[1]/input[1]")
-    WebElement delete_13_Midnight;
 
-    @FindBy(xpath = "//input[@id='add-to-wishlist-button-submit']")
-    WebElement addToWishlist;
-
-
+    @Step("Clicking submit button step")
     public void addToCart() {
         addToCart.click();
     }
 
+    @Step("Geeting Cart count step")
     public String getCartCount() {
         return cart.getText();
     }
 
-    public void addToWishlist(){
-        addToWishlist.click();
-    }
-//    public void delete_13_Green(){
-//        cart.click();
-//        delete_13_Green.click();
-//    }
 }

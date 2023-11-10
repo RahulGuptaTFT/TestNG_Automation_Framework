@@ -1,5 +1,6 @@
 package project.Pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -19,10 +20,16 @@ public class Wishlist {
     WebElement yourWishlist;
     @FindBy(xpath = "//input[@name='submit.deleteItem']")
     WebElement deleteFromWishlist;
-
+    @FindBy(xpath = "//input[@id='add-to-wishlist-button-submit']")
+    WebElement addToWishlist;
+    @Step("Deleting from whishlist button step")
     public void deleteWishlist() {
         Actions act = new Actions(driver);
         act.moveToElement(accountsAndLists).moveToElement(yourWishlist).click().build().perform();
         deleteFromWishlist.click();
+    }
+    @Step("Clicking add-to-whishlist button step")
+    public void addToWishlist(){
+        addToWishlist.click();
     }
 }

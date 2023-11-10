@@ -1,5 +1,6 @@
 package project.Pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -38,7 +39,7 @@ public class Dashboard {
         searchBar.sendKeys(s);
         Enter_to_Search.click();
     }
-
+    @Step("Clicking clear text from searchBar step")
     public void clearTextFromSearchBar() {
         searchBar.clear();
     }
@@ -46,10 +47,11 @@ public class Dashboard {
     public String getSearchBarText() {
         return searchBar.getAttribute("value");
     }
-
+    @Step("Clicking on asitis to add-to-cart step")
     public void clickAsitis() {
         asitis.click();
     }
+    @Step("Clicking on airpods to add-to-cart step")
     public void clickAirpod() {
         airpod.click();
     }
@@ -57,9 +59,11 @@ public class Dashboard {
     public void clickIphone13(){
         iphone.click();
     }
+    @Step("comparing multiple products step")
     public boolean checkCompareIsDisplayed(){
         return compare.isDisplayed();
     }
+    @Step("Set filter by amount step")
     public void setAmountByFilter(String min,String max){
         minPrice.sendKeys(min);
         maxPrice.sendKeys(max);

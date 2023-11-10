@@ -1,11 +1,16 @@
 package Tests;
 
 import com.aventstack.extentreports.ExtentTest;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import project.Pages.Dashboard;
 import project.Pages.Homepage;
+import project.Pages.LandingPage;
 import project.Pages.LoginPage;
 import project.Utils.propertiesFile;
 import project.basetest.BaseTest;
@@ -15,10 +20,17 @@ public class Filters_Test extends BaseTest {
     String id = prop.getId();
     String pass = prop.getPass();
 
-    @Test(groups = "Filter")
+    @Test(description = "Verifying Filter Test")
+    @Description("Verifying Filter Test")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("Story: Applying filters on product on amazon")
     public void filter() {
         ExtentTest test = extent.createTest("Checking Filters");
         test.pass("verified");
+        LandingPage landingPage = new LandingPage(driver);
+        if (landingPage.checkYourAccountIsDisplayed() == true){
+            landingPage.clickYourAccount();
+        }
         Homepage homepage = new Homepage(driver);
         // It will on homepage for signIn
         homepage.clickSignIn();

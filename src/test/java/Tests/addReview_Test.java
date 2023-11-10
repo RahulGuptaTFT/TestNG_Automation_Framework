@@ -1,13 +1,14 @@
 package Tests;
 
 import com.aventstack.extentreports.ExtentTest;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import project.Pages.Dashboard;
-import project.Pages.Homepage;
-import project.Pages.LoginPage;
-import project.Pages.Review;
+import project.Pages.*;
 import project.Utils.propertiesFile;
 import project.basetest.BaseTest;
 
@@ -19,12 +20,22 @@ public class addReview_Test extends BaseTest {
     String id = prop.getId();
     String pass = prop.getPass();
 
-    @Test
+    @Test(description = "Verifying add review Test")
+    @Description("Verifying add review Test")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("Story: Adding review of product on amazon")
     public void addReview() throws InterruptedException {
         ExtentTest test = extent.createTest("Checking Add-Review Feature");
         test.pass("verified");
+
+        LandingPage landingPage = new LandingPage(driver);
+        if (landingPage.checkYourAccountIsDisplayed() == true){
+            landingPage.clickYourAccount();
+        }
         Homepage homepage = new Homepage(driver);
         homepage.clickSignIn();
+
+
 
         LoginPage loginPage = new LoginPage(driver);
 
@@ -43,7 +54,7 @@ public class addReview_Test extends BaseTest {
         js.executeScript("window.scrollBy(0,4800)");
         Review review = new Review(driver);
         review.addReview("Great product","I am using this product and it is comfortable.");
-        Thread.sleep(3000);
+
         driver.switchTo().window(tabs.get(0));
     }
 }
