@@ -9,7 +9,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import project.WebdriverInitialize.initialize;
 import project.basetest.BaseTest;
 
 import java.io.File;

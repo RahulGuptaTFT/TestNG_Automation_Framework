@@ -5,12 +5,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.ITestContext;
 import org.testng.annotations.*;
-import project.Pages.Homepage;
-import project.Pages.LandingPage;
-import project.WebdriverInitialize.initialize;
-
 import java.time.Duration;
 
 

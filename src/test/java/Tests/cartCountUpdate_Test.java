@@ -42,7 +42,7 @@ public class cartCountUpdate_Test extends BaseTest {
         Cart cart = new Cart(driver);
         int count = Integer.parseInt(cart.getCartCount());
         System.out.println(count);
-        Assert.assertEquals(count > 0,false);
+        Assert.assertEquals(count > 0,true);
 
     }
 }
