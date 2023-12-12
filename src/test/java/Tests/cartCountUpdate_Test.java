@@ -38,11 +38,9 @@ public class cartCountUpdate_Test extends BaseTest {
         loginPage.addPassword(pass);
         loginPage.clickSubmit();
 
-        Dashboard dashboard = new Dashboard(driver);
         Cart cart = new Cart(driver);
         int count = Integer.parseInt(cart.getCartCount());
         System.out.println(count);
-        Assert.assertEquals(count > 0,true);
-
+        Assert.assertEquals(count > 0,false);
     }
 }

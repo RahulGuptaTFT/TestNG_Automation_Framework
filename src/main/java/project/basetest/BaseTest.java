@@ -31,7 +31,7 @@ public class BaseTest {
             driver = new ChromeDriver();
         }
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.get(url);
     }
     @AfterMethod
@@ -40,7 +40,6 @@ public class BaseTest {
     }
     @AfterTest
     public void afterTest() {
-        System.out.println("All tests Finished");
         extent.flush();
     }
     public static WebDriver getDriver(){

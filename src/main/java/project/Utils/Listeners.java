@@ -11,35 +11,43 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import project.basetest.BaseTest;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.util.UUID;
 
 
 public class Listeners implements ITestListener {
-    @Attachment(value = "Page Screenshot" , type = "image/png")
-    public byte[] saveScreenShot(WebDriver driver){
-        return ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-    }
+
     @Override
     public void onTestStart(ITestResult result) {
-        System.out.println("test case Start and TestCase name is = "+result.getName());
+        System.out.println("test case Start and TestCase name is = " + result.getName());
     }
+
     @Override
     public void onTestSuccess(ITestResult result) {
-        System.out.println("test case Success and TestCase name is = "+result.getName());
+        System.out.println("test case Success and TestCase name is = " + result.getName());
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
 
-        System.out.println("test case Failed and TestCase name is = "+result.getName());
-        File file = ((TakesScreenshot) BaseTest.getDriver()).getScreenshotAs(OutputType.FILE);
-        try {
-            FileUtils.copyFile(file,new File("C:/Users/Rahul Gupta/IdeaProjects/Test_Automation_Framework/Screenshots/"+result.getName()+".png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        System.out.println("test case Failed and TestCase name is = " + result.getName());
 
-//        saveScreenShot(initialize.getDriver());
+        WebDriver driver = BaseTest.getDriver();
+        byte[] failedSS = takeScreenshot(driver);
+        Allure.addAttachment(UUID.randomUUID().toString(),new ByteArrayInputStream(failedSS));
+        saveLogs(result.getMethod().getMethodName());
+        saveLogs("cart count is not right");
+    }
+
+    //    @Attachment(value = "Screenshot", type = "image/png")
+    public byte[] takeScreenshot(WebDriver driver) {
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+    }
+
+    @Attachment(value = "{0}", type = "text/plain")
+    public static String saveLogs(String msg) {
+        return msg;
     }
 }

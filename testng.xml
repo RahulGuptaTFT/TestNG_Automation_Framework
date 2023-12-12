@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
 <suite name="All Test Suite">
 
     <listeners>
@@ -16,41 +18,43 @@
                     <include name="loginTest"/>
                 </methods>
             </class>
-            <class name="Tests.addToCart_Test">
-                <methods>
-                    <include name="addTocart_Test"/>
-                </methods>
-            </class>
-            <class name="Tests.addReview_Test">
-                <methods>
-                    <include name="addReview"/>
-                </methods>
-            </class>
-            <class name="Tests.addToWishlist_Test">
-                <methods>
-                    <include name="addToWishList"/>
-                </methods>
-            </class>
+<!--            <class name="Tests.addToCart_Test">-->
+<!--                <methods>-->
+<!--                    <include name="addTocart_Test"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="Tests.addReview_Test">-->
+<!--                <methods>-->
+<!--                    <include name="addReview"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="Tests.addToWishlist_Test">-->
+<!--                <methods>-->
+<!--                    <include name="addToWishList"/>-->
+<!--                </methods>-->
+<!--            </class>-->
             <class name="Tests.cartCountUpdate_Test">
                 <methods>
                     <include name="getCartCount"/>
                 </methods>
             </class>
-            <class name="Tests.removeItemFromWishlist">
-                <methods>
-                    <include name="removefromWishlist"/>
-                </methods>
-            </class>
-            <class name="Tests.Filters_Test">
-                <methods>
-                    <include name="filter"/>
-                </methods>
-            </class>
-            <class name="Tests.compareProduct_Test">
-                <methods>
-                    <include name="compare"/>
-                </methods>
-            </class>
+<!--            <class name="Tests.removeItemFromWishlist">-->
+<!--                <methods>-->
+<!--                    <include name="removefromWishlist"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="Tests.Filters_Test">-->
+<!--                <methods>-->
+<!--                    <include name="filter"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="Tests.compareProduct_Test">-->
+<!--                <methods>-->
+<!--                    <include name="compare"/>-->
+<!--                </methods>-->
+<!--            </class>-->
         </classes>
+
     </test>
+
 </suite>

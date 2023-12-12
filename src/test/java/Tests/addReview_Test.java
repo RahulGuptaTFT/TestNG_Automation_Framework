@@ -21,7 +21,7 @@ public class addReview_Test extends BaseTest {
     String pass = prop.getPass();
 
     @Test(description = "Verifying add review Test")
-    @Description("Verifying add review Test")
+    @Description("Verifying add review Testt5")
     @Severity(SeverityLevel.NORMAL)
     @Story("Story: Adding review of product on amazon")
     public void addReview() throws InterruptedException {
